@@ -1,4 +1,3 @@
-
 import React, { useMemo } from 'react';
 import VideoCard from './VideoCard';
 import { getAllVideos, VideoMetadata } from '../lib/video-utils';
@@ -31,6 +30,7 @@ const RecentVideos = () => {
               publishDate={video.publishDate}
               category={video.category}
               isRecent={true}
+              link={video.link}
             />
           ))}
         </div>

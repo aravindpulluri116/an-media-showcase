@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Search, Filter } from 'lucide-react';
 import VideoCard from './VideoCard';
@@ -73,6 +72,7 @@ const AllVideos = () => {
             thumbnail={video.thumbnail}
             publishDate={video.publishDate}
             category={video.category}
+            link={video.link}
           />
         ))}
       </div>

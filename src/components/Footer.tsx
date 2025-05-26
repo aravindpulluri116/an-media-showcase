@@ -5,8 +5,10 @@ import { Mail, Phone, Instagram } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white py-12">
+      
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
+          
           {/* Company Info */}
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-4">
@@ -18,6 +20,9 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Professional video production and design company creating compelling visual stories for brands worldwide.
             </p>
+            <div className="text-center mt-8">
+            <Link to="/contact" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Contact Now</Link>
+          </div>
           </div>
           
           {/* Quick Links */}
@@ -46,17 +51,45 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2">
-              <li>
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4 text-gray-400" />
-                  <a href="mailto:pulluriaravind@gmail.com" className="text-gray-400 hover:text-white transition-colors">
-                    pulluriaravind@gmail.com
+            <div className="space-y-3">
+              <div>
+                <p className="text-white font-medium mb-1">Aravind Pulluri</p>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Phone className="w-4 h-4" />
+                  <span>8886113839</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Mail className="w-4 h-4" />
+                  <span>pulluriaravind@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm">
+                  <Instagram className="w-4 h-4" />
+                  <a href="https://www.instagram.com/techy.aravind/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    @techy.aravind
                   </a>
                 </div>
-              </li>
-            </ul>
+              </div>
+              
+              <div className="pt-2">
+                <p className="text-white font-medium mb-1">Nithin Alle</p>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Phone className="w-4 h-4" />
+                  <span>+91 8341235665</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Mail className="w-4 h-4" />
+                  <span>allenithin14@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm">
+                  <Instagram className="w-4 h-4" />
+                  <a href="https://www.instagram.com/edit.with.nithin/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    @edit.with.nithin
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
     </footer>

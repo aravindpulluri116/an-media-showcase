@@ -1,7 +1,7 @@
-
+// Ensure the file is treated as a module by checking the import/export syntax and file extension.
 import React, { useEffect, useState } from 'react';
 import { Play } from 'lucide-react';
-import { getLatestProject } from '../lib/video-utils';
+import { getLatestProject, getVideoMetadata } from '../lib/video-utils';
 
 const HeroSection = () => {
   const [latestProject, setLatestProject] = useState(null);
@@ -11,61 +11,9 @@ const HeroSection = () => {
     setLatestProject(project);
   }, []);
 
-const handlePlay = () => {
-    if (latestProject) {
-      const videoPath = `/videos/${latestProject.filename}`;
-      const videoElement = document.createElement('video');
-      videoElement.src = videoPath;
-      videoElement.controls = true;
-      videoElement.style.width = '100%';
-      videoElement.style.height = 'auto';
-      videoElement.style.maxHeight = '80vh';
-
-      const modalContainer = document.createElement('div');
-      modalContainer.style.position = 'fixed';
-      modalContainer.style.top = '0';
-      modalContainer.style.left = '0';
-      modalContainer.style.width = '100%';
-      modalContainer.style.height = '100%';
-      modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-      modalContainer.style.display = 'flex';
-      modalContainer.style.justifyContent = 'center';
-      modalContainer.style.alignItems = 'center';
-      modalContainer.style.zIndex = '1000';
-
-      const closeButton = document.createElement('button');
-      closeButton.innerHTML = '×';
-      closeButton.style.position = 'absolute';
-      closeButton.style.top = '20px';
-      closeButton.style.right = '20px';
-      closeButton.style.backgroundColor = 'transparent';
-      closeButton.style.border = 'none';
-      closeButton.style.color = 'white';
-      closeButton.style.fontSize = '32px';
-      closeButton.style.cursor = 'pointer';
-      closeButton.style.padding = '10px';
-      closeButton.style.zIndex = '1001';
-      closeButton.onclick = () => document.body.removeChild(modalContainer);
-
-      modalContainer.onclick = (e) => {
-        if (e.target === modalContainer) {
-          document.body.removeChild(modalContainer);
-        }
-      };
-
-      modalContainer.appendChild(closeButton);
-      modalContainer.appendChild(videoElement);
-      document.body.appendChild(modalContainer);
-
-      closeButton.onmouseover = () => {
-        closeButton.style.transform = 'scale(1.2)';
-        closeButton.style.transition = 'transform 0.2s ease';
-      };
-      closeButton.onmouseout = () => {
-        closeButton.style.transform = 'scale(1)';
-      };
-
-      videoElement.play();
+  const handlePlay = () => {
+    if (latestProject && latestProject.link) {
+      window.open(latestProject.link, '_blank');
     }
   };
 

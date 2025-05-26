@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Play, Calendar, Share2, Facebook, Twitter } from 'lucide-react';
 
@@ -10,6 +9,7 @@ interface VideoCardProps {
   publishDate: string;
   category?: string;
   isRecent?: boolean;
+  link?: string;
 }
 
 const VideoCard: React.FC<VideoCardProps> = ({ 
@@ -19,70 +19,13 @@ const VideoCard: React.FC<VideoCardProps> = ({
   thumbnail, 
   publishDate, 
   category, 
-  isRecent = false 
+  isRecent = false,
+  link 
 }) => {
   const handlePlay = () => {
-    const videoPath = `/videos/${filename}`;
-    // Create a video element
-    const videoElement = document.createElement('video');
-    videoElement.src = videoPath;
-    videoElement.controls = true;
-    videoElement.style.width = '100%';
-    videoElement.style.height = 'auto';
-    videoElement.style.maxHeight = '80vh';
-
-    // Create a modal container
-    const modalContainer = document.createElement('div');
-    modalContainer.style.position = 'fixed';
-    modalContainer.style.top = '0';
-    modalContainer.style.left = '0';
-    modalContainer.style.width = '100%';
-    modalContainer.style.height = '100%';
-    modalContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-    modalContainer.style.display = 'flex';
-    modalContainer.style.flexDirection = 'column';
-    modalContainer.style.justifyContent = 'center';
-    modalContainer.style.alignItems = 'center';
-    modalContainer.style.zIndex = '1000';
-
-    // Create a close button
-    const closeButton = document.createElement('button');
-    closeButton.innerHTML = '×';
-    closeButton.style.position = 'absolute';
-    closeButton.style.top = '20px';
-    closeButton.style.right = '20px';
-    closeButton.style.backgroundColor = 'transparent';
-    closeButton.style.border = 'none';
-    closeButton.style.color = 'white';
-    closeButton.style.fontSize = '32px';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.padding = '10px';
-    closeButton.style.zIndex = '1001';
-    closeButton.onclick = () => document.body.removeChild(modalContainer);
-
-    // Add click handler to close modal
-    modalContainer.onclick = (e) => {
-      if (e.target === modalContainer) {
-        document.body.removeChild(modalContainer);
-      }
-    };
-
-    // Add close button and video to modal, then add modal to body
-    modalContainer.appendChild(closeButton);
-    modalContainer.appendChild(videoElement);
-    document.body.appendChild(modalContainer);
-
-    // Add hover effect to close button
-    closeButton.onmouseover = () => {
-      closeButton.style.transform = 'scale(1.2)';
-      closeButton.style.transition = 'transform 0.2s ease';
-    };
-    closeButton.onmouseout = () => {
-      closeButton.style.transform = 'scale(1)';
-    };
-
-    // Auto play the video
-    videoElement.play();
+    if (link) {
+      window.open(link, '_blank');
+    }
   };
 
   const handleShare = (platform: string) => {

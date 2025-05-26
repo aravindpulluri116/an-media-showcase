@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Palette, FileText, Menu, Video, Play, Youtube } from 'lucide-react';
@@ -70,12 +70,12 @@ const Services = () => {
             <p className="text-gray-600 mb-6">
               Let's bring your vision to life with our professional creative services.
             </p>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="inline-block bg-gradient-to-br from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
             >
               Contact Us Today
-            </a>
+            </Link>
           </div>
         </div>
       </main>

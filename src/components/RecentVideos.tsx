@@ -1,40 +1,14 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import VideoCard from './VideoCard';
-
-interface Video {
-  id: number;
-  title: string;
-  thumbnail: string;
-  publishDate: string;
-  category: string;
-}
+import { getAllVideos, VideoMetadata } from '../lib/video-utils';
 
 const RecentVideos = () => {
-  // Mock data for recent videos
-  const recentVideos: Video[] = [
-    {
-      id: 1,
-      title: "Corporate Brand Video - Tech Startup Launch",
-      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&h=300&fit=crop",
-      publishDate: "2024-05-20",
-      category: "Corporate"
-    },
-    {
-      id: 2,
-      title: "Wedding Highlights - Sarah & John",
-      thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop",
-      publishDate: "2024-05-18",
-      category: "Wedding"
-    },
-    {
-      id: 3,
-      title: "Product Demo - Smart Home System",
-      thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
-      publishDate: "2024-05-15",
-      category: "Product"
-    }
-  ];
+  const recentVideos = useMemo(() => {
+    return getAllVideos()
+      .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+      .slice(0, 3);
+  }, []);
 
   return (
     <section className="py-12 bg-gray-50">
@@ -52,6 +26,7 @@ const RecentVideos = () => {
               key={video.id}
               id={video.id}
               title={video.title}
+              filename={video.filename}
               thumbnail={video.thumbnail}
               publishDate={video.publishDate}
               category={video.category}

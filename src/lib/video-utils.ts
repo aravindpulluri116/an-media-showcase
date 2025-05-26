@@ -29,12 +29,11 @@ const videoMetadata: Record<string, VideoMetadata> = {
     publishDate: '2024-05-18',
     category: 'Trading',
     link: 'https://drive.google.com/file/d/1N0Otsw3bBuhHRghJ828B4lvqqTzvkjfZ/view?usp=sharing'
-  },
-  'Video_3.mp4': {
+  },  'Video_3.mp4': {
     id: 3,
     title: 'Techy Aravind R8',
     filename: 'Video_3.mp4',
-    thumbnail: '/placeholder.svg',
+    thumbnail: '/videos/techyaravindr8.jpg',
     publishDate: '2025-05-26',
     category: 'Tech',
     link: 'https://drive.google.com/file/d/1q7DF89DR0swt2dwUSzNfQ8d_zI8NKc69/view?usp=sharing'

@@ -45,7 +45,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
               <img 
-                src={latestProject ? `/videos/${latestProject.filename}` : "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop"}
+                src={latestProject ? latestProject.thumbnail : "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop"}
                 alt="Featured video"
                 className="w-full h-64 object-cover"
               />

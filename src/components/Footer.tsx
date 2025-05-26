@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -16,35 +16,18 @@ const Footer = () => {
               <h3 className="text-xl font-bold">AN Media</h3>
             </div>
             <p className="text-gray-400 mb-4">
-              Professional video production company creating compelling visual stories for brands worldwide.
+              Professional video production and design company creating compelling visual stories for brands worldwide.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
-            </div>
           </div>
           
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
           
@@ -52,21 +35,53 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Corporate Videos</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Wedding Films</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Product Demos</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Event Coverage</a></li>
+              <li><span className="text-gray-400">Logo Design</span></li>
+              <li><span className="text-gray-400">Posters & Flyers</span></li>
+              <li><span className="text-gray-400">Menu Design</span></li>
+              <li><span className="text-gray-400">Reels & Promotional Videos</span></li>
+              <li><span className="text-gray-400">YouTube Videos</span></li>
             </ul>
           </div>
           
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-2 text-gray-400">
-              <p>123 Creative Street</p>
-              <p>Media City, MC 12345</p>
-              <p>Phone: (555) 123-4567</p>
-              <p>Email: info@anmedia.com</p>
+            <div className="space-y-3">
+              <div>
+                <p className="text-white font-medium mb-1">Aravind Pulluri</p>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Phone className="w-4 h-4" />
+                  <span>8886113839</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Mail className="w-4 h-4" />
+                  <span>pulluriaravind@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm">
+                  <Instagram className="w-4 h-4" />
+                  <a href="https://www.instagram.com/techy.aravind/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    @techy.aravind
+                  </a>
+                </div>
+              </div>
+              
+              <div className="pt-2">
+                <p className="text-white font-medium mb-1">Nithin Alle</p>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Phone className="w-4 h-4" />
+                  <span>8341235665</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
+                  <Mail className="w-4 h-4" />
+                  <span>allenithin14@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm">
+                  <Instagram className="w-4 h-4" />
+                  <a href="https://www.instagram.com/edit.with.nithin/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    @edit.with.nithin
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -17,10 +17,10 @@ const Header = () => {
           
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="hover:text-blue-400 transition-colors">Home</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">About</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">Services</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">Contact</a>
+            <a href="/" className="hover:text-blue-400 transition-colors">Home</a>
+            <a href="/about" className="hover:text-blue-400 transition-colors">About</a>
+            <a href="/services" className="hover:text-blue-400 transition-colors">Services</a>
+            <a href="/contact" className="hover:text-blue-400 transition-colors">Contact</a>
           </nav>
           
           {/* Mobile Menu Button */}

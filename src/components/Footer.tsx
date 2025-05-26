@@ -56,7 +56,7 @@ const Footer = () => {
                 <p className="text-white font-medium mb-1">Aravind Pulluri</p>
                 <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
                   <Phone className="w-4 h-4" />
-                  <span>8886113839</span>
+                  <span>+91 8886113839</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400 text-sm mb-1">
                   <Mail className="w-4 h-4" />
